@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MarketAnalyzer.Forms;
 
 namespace MarketAnalyzer
 {
@@ -17,6 +15,7 @@ namespace MarketAnalyzer
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Globals.Instance.StartUp().GetAwaiter().GetResult();
             Application.Run(new MainForm());
         }
     }

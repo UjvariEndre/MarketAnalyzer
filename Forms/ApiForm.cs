@@ -8,18 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MarketAnalyzer
+namespace MarketAnalyzer.Forms
 {
-    public partial class MainForm : Form
+    public partial class ApiForm : Form
     {
-        public MainForm()
+        public ApiForm()
         {
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void saveButton_Click(object sender, EventArgs e)
         {
-
+            string[] apiData = { apiKeyInput.Text, apiSecretInput.Text };
+            DotEnv.Save(".env", apiData);
+            Close();
         }
     }
 }
