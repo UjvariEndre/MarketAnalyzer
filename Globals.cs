@@ -14,6 +14,7 @@ namespace MarketAnalyzer
         public CryptoExchange.Net.Objects.WebCallResult<Binance.Net.Objects.Spot.SpotData.BinanceAccountInfo> SpotInfo { get; set; }
         public Dictionary<string, Coin> Top200MarketCap { get; set; }
         public string FileName { get; set; }
+        public string FilePath { get; set; }
 
         static Globals()
         {
@@ -23,9 +24,11 @@ namespace MarketAnalyzer
 
         public async Task StartUp()
         {
-            DateTime now = DateTime.Now;
-            FileName = $"{now.Year}-{now.Month.ToString("D2")}-{now.Day.ToString("D2")}";
-            //DoExcel.ReadExcel($"worksheets/{FileName}.xlsx");
+            //DateTime now = DateTime.Now;
+            //FileName = $"{now.Year}-{now.Month.ToString("D2")}-{now.Day.ToString("D2")}";
+            FileName = "COIN_LIST";
+            FilePath = $"../../../worksheets/{FileName}.xlsx";
+            DoExcel.ReadExcel(FilePath);
 
             RestfulClient = new BinanceClient(new Binance.Net.Objects.BinanceClientOptions()
             {
@@ -49,6 +52,9 @@ namespace MarketAnalyzer
             {
                 Console.WriteLine(e);
             }
+
+            await Analysis.GetCandleSticks();
+            DoExcel.WriteExcel();
         }
     }
 }
