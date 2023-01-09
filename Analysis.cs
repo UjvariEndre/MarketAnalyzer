@@ -62,7 +62,6 @@ namespace MarketAnalyzer
                 tempList.Add(ohlc);
             }
             tempCoin.Candlesticks = tempList;
-            Console.WriteLine($"Historical Data of {coin} -> OK");
         }
 
         public async static Task CalculateHistoricalVolatility(string coin)
@@ -96,7 +95,6 @@ namespace MarketAnalyzer
             {
                 tempCoin.HV30 = -1;
             }
-            Console.WriteLine($"Calculate HV30 of {coin} -> OK");
         }
     }
 }

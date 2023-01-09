@@ -54,7 +54,6 @@ namespace MarketAnalyzer
             }
 
             await Analysis.GetCandleSticks();
-            DoExcel.WriteExcel();
         }
     }
 }
