@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Binance.Net;
+using MarketAnalyzer.Forms;
 
 namespace MarketAnalyzer
 {
@@ -24,8 +26,6 @@ namespace MarketAnalyzer
 
         public async Task StartUp()
         {
-            //DateTime now = DateTime.Now;
-            //FileName = $"{now.Year}-{now.Month.ToString("D2")}-{now.Day.ToString("D2")}";
             FileName = "COIN_LIST";
             FilePath = $"../../../worksheets/{FileName}.xlsx";
             DoExcel.ReadExcel(FilePath);
@@ -53,7 +53,8 @@ namespace MarketAnalyzer
                 Console.WriteLine(e);
             }
 
-            await Analysis.GetCandleSticks();
+            // ide please wait
+            Application.Run(new PleaseWaitForm());
         }
     }
 }

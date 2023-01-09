@@ -101,6 +101,7 @@ namespace MarketAnalyzer.Forms
             this.Controls.Add(this.apiKeyInputLabel);
             this.Controls.Add(this.label1);
             this.Name = "ApiForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Market Analyzer";
             this.ResumeLayout(false);
             this.PerformLayout();

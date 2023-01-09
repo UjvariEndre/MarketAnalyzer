@@ -111,6 +111,7 @@ namespace MarketAnalyzer.Forms
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.dataGridView1);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Market Analyzer";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

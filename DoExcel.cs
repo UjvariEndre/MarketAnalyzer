@@ -29,12 +29,10 @@ namespace MarketAnalyzer
         {
             DateTime now = DateTime.Now;
             string fileName = $"{now.Year}-{now.Month.ToString("D2")}-{now.Day.ToString("D2")}-{now.Hour}-{now.Minute}-{now.Second}.xlsx";
-            string filePath = $"../../../worksheets/{fileName}.xlsx";
+            //string filePath = $"../../../worksheets/{fileName}.xlsx";
 
             WorkBook wb = WorkBook.Create();
             WorkSheet sheet = wb.CreateWorkSheet(fileName);
-            //WorkBook workbook = WorkBook.Load(filePath);
-            //WorkSheet sheet = wb.DefaultWorkSheet;
 
             int j = 0;
             foreach (var i in Globals.Instance.Top200MarketCap)
